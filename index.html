@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אולפן אונדולה | אולפן הקלטות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black-deep:#07060a;
+    --black-panel:#0e0c11;
+    --black-panel-2:#131017;
+    --gold-dark:#7a5f24;
+    --gold-base:#b0882f;
+    --gold-line:#cfa652;
+    --gold-bright:#efd487;
+    --cream:#f2ecdc;
+    --white-soft:#faf7ee;
+    --line-hair: rgba(207,166,82,0.22);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black-deep);
+    color:var(--cream);
+    font-family:'Assistant', sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(ellipse at 20% -10%, rgba(176,136,47,0.10), transparent 45%),
+      radial-gradient(ellipse at 90% 10%, rgba(176,136,47,0.06), transparent 40%);
+  }
+
+  ::selection{background:var(--gold-base); color:var(--black-deep);}
+
+  .gold-text{
+    background:linear-gradient(115deg, var(--gold-dark) 10%, var(--gold-bright) 45%, var(--gold-line) 65%, var(--gold-dark) 90%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shimmer 9s ease-in-out infinite;
+  }
+
+  @keyframes shimmer{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .gold-text{animation:none;}
+    *{animation-duration:0.001s !important; transition-duration:0.001s !important;}
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:700;
+    letter-spacing:0.01em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed; top:0; right:0; left:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
+    background:linear-gradient(to bottom, rgba(7,6,10,0.92), transparent);
+  }
+  .nav .brand{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:1.25rem;
+    letter-spacing:0.12em;
+  }
+  .nav .brand span{color:var(--gold-bright);}
+  .nav nav{display:flex; gap:2.2rem; font-size:0.92rem;}
+  .nav nav a{
+    color:var(--cream); opacity:0.75; position:relative; padding-bottom:4px;
+    transition:opacity 0.3s;
+  }
+  .nav nav a:hover{opacity:1;}
+  .nav nav a::after{
+    content:''; position:absolute; right:0; bottom:0; width:0; height:1px;
+    background:var(--gold-bright); transition:width 0.35s ease;
+  }
+  .nav nav a:hover::after{width:100%;}
+  @media (max-width:760px){ .nav nav{display:none;} }
+
+  /* ---------- HERO (poster layout, text over photo) ---------- */
+  .hero{
+    position:relative;
+    padding:150px 6vw 90px;
+    border-bottom:1px solid var(--line-hair);
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+  }
+
+  .hero-text{
+    position:relative; z-index:2;
+    max-width:560px;
+  }
+
+  .logo-lockup{margin-bottom:30px;}
+  .logo-word{font-family:'Frank Ruhl Libre', serif; font-size:1.05rem; letter-spacing:0.55em; color:var(--gold-bright); margin-inline-end:-0.55em;}
+  .logo-tagline{font-size:0.68rem; letter-spacing:0.3em; color:var(--white-soft); opacity:0.6; text-transform:uppercase; margin-top:8px;}
+  .logo-rule{width:44px; height:2px; background:var(--gold-line); margin-top:16px;}
+
+  .waveform-deco{display:block; width:280px; max-width:70%; height:auto; margin:30px 0;}
+
+  .poster-title{
+    font-family:'Frank Ruhl Libre', serif; font-weight:900;
+    font-size:clamp(2.6rem, 6vw, 4.3rem);
+    color:var(--white-soft);
+    line-height:1.05;
+    margin-bottom:16px;
+    text-shadow:0 4px 30px rgba(0,0,0,0.6);
+  }
+  .poster-script{
+    font-family:'Frank Ruhl Libre', serif; font-style:italic; font-weight:500;
+    font-size:1.25rem; color:var(--gold-bright);
+    display:inline-block; position:relative; margin-bottom:38px; padding-bottom:12px;
+  }
+  .poster-script::after{
+    content:''; position:absolute; right:0; bottom:0; width:75%; height:1px; background:var(--gold-line);
+  }
+
+  .service-row{font-size:0.92rem; color:var(--cream); opacity:0.9; margin-bottom:44px; line-height:1.9;}
+
+  .icon-row{
+    display:flex; margin-bottom:50px;
+    border-top:1px solid var(--line-hair); border-bottom:1px solid var(--line-hair);
+    padding:26px 0;
+  }
+  .icon-item{flex:1; text-align:center; padding:0 8px; border-inline-end:1px solid var(--line-hair);}
+  .icon-item:last-child{border-inline-end:none;}
+  .icon-item svg{width:26px; height:26px; margin-bottom:10px;}
+  .icon-item .label{font-size:0.76rem; color:var(--cream); opacity:0.78; line-height:1.4;}
+
+  .hero-cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  .hero-question{font-size:0.95rem; color:var(--white-soft); opacity:0.9;}
+  .arrow-cta{display:inline-flex; align-items:center; gap:10px;}
+  .arrow-cta svg{width:16px; height:16px;}
+
+  .eyebrow{
+    font-size:0.78rem;
+    letter-spacing:0.35em;
+    color:var(--gold-line);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+
+  .cta{
+    display:inline-block;
+    padding:16px 42px;
+    border:1px solid var(--gold-base);
+    color:var(--gold-bright);
+    font-size:0.95rem;
+    letter-spacing:0.08em;
+    position:relative;
+    overflow:hidden;
+    transition:color 0.4s ease;
+  }
+  .cta span{position:relative; z-index:2;}
+  .cta::before{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, var(--gold-dark), var(--gold-bright), var(--gold-line));
+    background-size:200% 100%;
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform 0.45s cubic-bezier(.4,0,.2,1);
+    z-index:1;
+  }
+  .cta:hover{color:var(--black-deep);}
+  .cta:hover::before{transform:scaleX(1);}
+
+  /* ---------- DIVIDER ---------- */
+  .divider{
+    display:flex; align-items:center; gap:16px;
+    max-width:220px; margin:0 auto;
+  }
+  .divider .line{flex:1; height:1px; background:var(--line-hair);}
+  .divider .dot{width:5px; height:5px; border-radius:50%; background:var(--gold-line);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:110px 6vw;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 64px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem, 3.4vw, 2.6rem); color:var(--white-soft);}
+
+  /* services */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-hair);
+    border:1px solid var(--line-hair);
+    max-width:1080px; margin:0 auto;
+  }
+  .service{
+    background:var(--black-panel);
+    padding:52px 34px;
+    text-align:center;
+  }
+  .service .icon{width:40px; height:40px; margin:0 auto 24px;}
+  .service h3{
+    font-size:1.25rem; color:var(--gold-bright); margin-bottom:14px; font-weight:500;
+  }
+  .service p{
+    font-size:0.92rem; line-height:1.85; opacity:0.72; font-weight:300;
+  }
+  @media (max-width:820px){ .services{grid-template-columns:1fr;} }
+
+  /* gear strip */
+  .gear-strip{
+    display:flex; justify-content:center; gap:56px; flex-wrap:wrap;
+    max-width:900px; margin:70px auto 0;
+    padding-top:50px; border-top:1px solid var(--line-hair);
+    text-align:center;
+  }
+  .gear-strip div{font-size:0.82rem; letter-spacing:0.06em; opacity:0.6;}
+  .gear-strip strong{display:block; color:var(--gold-line); font-size:1.6rem; font-family:'Frank Ruhl Libre', serif; margin-bottom:6px; font-weight:700;}
+
+  /* gallery */
+  .gallery{
+    max-width:1080px; margin:0 auto;
+    display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:220px 220px; gap:14px;
+  }
+  .gallery .cell{
+    background:var(--black-panel-2);
+    border:1px solid var(--line-hair);
+    position:relative; overflow:hidden;
+    display:flex; align-items:flex-end; padding:20px;
+  }
+  .gallery .cell:first-child{grid-row:span 2; align-items:center; justify-content:center; flex-direction:column;}
+  .gallery .cell span{font-size:0.8rem; color:var(--gold-line); letter-spacing:0.05em;}
+  .gallery .cell svg{position:absolute; inset:0; width:100%; height:100%; opacity:0.5;}
+  @media (max-width:760px){
+    .gallery{grid-template-columns:1fr; grid-template-rows:auto;}
+    .gallery .cell{height:180px;}
+    .gallery .cell:first-child{grid-row:auto;}
+  }
+
+  /* quote */
+  .quote{
+    max-width:680px; margin:0 auto; text-align:center;
+  }
+  .quote p{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:clamp(1.3rem, 2.4vw, 1.7rem);
+    line-height:1.7;
+    color:var(--white-soft);
+    font-weight:400;
+  }
+  .quote .who{margin-top:28px; font-size:0.85rem; color:var(--gold-line); letter-spacing:0.08em;}
+
+  /* booking */
+  .booking{
+    text-align:center;
+    background:radial-gradient(ellipse at 50% 0%, rgba(176,136,47,0.10), transparent 60%);
+    border-top:1px solid var(--line-hair);
+    border-bottom:1px solid var(--line-hair);
+  }
+  .booking h2{font-size:clamp(1.9rem, 3.6vw, 2.8rem); margin-bottom:20px;}
+  .booking p{opacity:0.75; max-width:480px; margin:0 auto 40px; line-height:1.8; font-size:0.98rem;}
+
+  /* footer */
+  footer{
+    padding:50px 6vw 40px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+    font-size:0.8rem; opacity:0.55;
+  }
+  footer .brand{font-family:'Frank Ruhl Libre', serif; color:var(--gold-line); opacity:1; font-size:1rem;}
+
+  :focus-visible{outline:1.5px solid var(--gold-bright); outline-offset:3px;}
+
+  /* ---------- FULL PAGE BACKGROUND (external photo) ---------- */
+  .bg-art{
+    position:fixed; inset:0; z-index:0;
+    background-image:url('pont.png');
+    background-size:cover;
+    background-position:top center;
+    background-repeat:no-repeat;
+    pointer-events:none;
+  }
+  .bg-veil{
+    position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(to right, rgba(7,6,10,0.10) 0%, rgba(7,6,10,0.48) 42%, rgba(7,6,10,0.86) 78%),
+      linear-gradient(180deg, rgba(7,6,10,0.08) 0%, rgba(7,6,10,0.30) 34%, rgba(7,6,10,0.82) 62%, var(--black-deep) 100%);
+  }
+  .content{position:relative; z-index:2;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute; overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a5f24"/>
+      <stop offset="45%" stop-color="#efd487"/>
+      <stop offset="70%" stop-color="#cfa652"/>
+      <stop offset="100%" stop-color="#7a5f24"/>
+    </linearGradient>
+    <linearGradient id="goldFillSubtle" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7a5f24" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#efd487" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="bg-art" aria-hidden="true"></div>
+<div class="bg-veil" aria-hidden="true"></div>
+
+<div class="content">
+
+<header class="nav">
+  <div class="brand">אולפ<span>ן</span> אונדולה</div>
+  <nav>
+    <a href="#services">שירותים</a>
+    <a href="#studio">האולפן</a>
+    <a href="#booking">הזמנת זמן אולפן</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+      <div class="logo-lockup">
+        <div class="logo-word">S T U D I O</div>
+        <div class="logo-tagline">RECORD · CREATE · INSPIRE</div>
+        <div class="logo-rule"></div>
+      </div>
+
+      <svg class="waveform-deco" viewBox="0 0 300 50" aria-hidden="true">
+        <line x1="0" y1="25" x2="55" y2="25" stroke="url(#goldStroke)" stroke-width="1"/>
+        <circle cx="3" cy="25" r="2.4" fill="#efd487"/>
+        <g stroke="url(#goldStroke)" stroke-width="2" stroke-linecap="round">
+          <line x1="62" y1="22" x2="62" y2="28"/>
+          <line x1="70" y1="18" x2="70" y2="32"/>
+          <line x1="78" y1="12" x2="78" y2="38"/>
+          <line x1="86" y1="20" x2="86" y2="30"/>
+          <line x1="94" y1="8" x2="94" y2="42"/>
+          <line x1="102" y1="15" x2="102" y2="35"/>
+          <line x1="110" y1="5" x2="110" y2="45"/>
+          <line x1="118" y1="17" x2="118" y2="33"/>
+          <line x1="126" y1="10" x2="126" y2="40"/>
+          <line x1="134" y1="2" x2="134" y2="48"/>
+          <line x1="142" y1="13" x2="142" y2="37"/>
+          <line x1="150" y1="18" x2="150" y2="32"/>
+          <line x1="158" y1="6" x2="158" y2="44"/>
+          <line x1="166" y1="16" x2="166" y2="34"/>
+          <line x1="174" y1="10" x2="174" y2="40"/>
+          <line x1="182" y1="20" x2="182" y2="30"/>
+          <line x1="190" y1="4" x2="190" y2="46"/>
+          <line x1="198" y1="14" x2="198" y2="36"/>
+          <line x1="206" y1="19" x2="206" y2="31"/>
+          <line x1="214" y1="21" x2="214" y2="29"/>
+          <line x1="222" y1="23" x2="222" y2="27"/>
+        </g>
+      </svg>
+
+      <h1 class="poster-title">אולפן הקלטות</h1>
+      <p class="poster-script">לכל סגנון, לכל קול, לכל רגש.</p>
+
+      <div class="service-row">הקלטות&nbsp; | &nbsp;קאברים&nbsp; | &nbsp;עיבודים&nbsp; | &nbsp;שירה&nbsp; | &nbsp;מיקס ומאסטרינג</div>
+
+      <div class="icon-row">
+        <div class="icon-item">
+          <svg viewBox="0 0 30 30"><rect x="10" y="4" width="10" height="15" rx="5" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><path d="M7 15 C7 21, 23 21, 23 15" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="15" y1="21" x2="15" y2="26" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="10" y1="26" x2="20" y2="26" stroke="url(#goldStroke)" stroke-width="1.4"/></svg>
+          <div class="label">הקלטות<br>שירה</div>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 30 30"><line x1="8" y1="4" x2="8" y2="26" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="15" y1="4" x2="15" y2="26" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="22" y1="4" x2="22" y2="26" stroke="url(#goldStroke)" stroke-width="1.4"/><rect x="5" y="9" width="6" height="4" fill="url(#goldFillSubtle)" stroke="url(#goldStroke)" stroke-width="1.2"/><rect x="12" y="17" width="6" height="4" fill="url(#goldFillSubtle)" stroke="url(#goldStroke)" stroke-width="1.2"/><rect x="19" y="6" width="6" height="4" fill="url(#goldFillSubtle)" stroke="url(#goldStroke)" stroke-width="1.2"/></svg>
+          <div class="label">עיבוד<br>והפקה</div>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 30 30"><path d="M6 15 C6 5, 24 5, 24 15" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><rect x="3" y="14" width="7" height="10" rx="3" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><rect x="20" y="14" width="7" height="10" rx="3" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/></svg>
+          <div class="label">מיקס<br>ומאסטרינג</div>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 30 30"><line x1="12" y1="6" x2="12" y2="22" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="22" y1="4" x2="22" y2="20" stroke="url(#goldStroke)" stroke-width="1.4"/><line x1="12" y1="6" x2="22" y2="4" stroke="url(#goldStroke)" stroke-width="1.4"/><ellipse cx="9" cy="23" rx="4" ry="3" fill="url(#goldFillSubtle)" stroke="url(#goldStroke)" stroke-width="1.2"/><ellipse cx="19" cy="21" rx="4" ry="3" fill="url(#goldFillSubtle)" stroke="url(#goldStroke)" stroke-width="1.2"/></svg>
+          <div class="label">קאברים<br>ייחודיים</div>
+        </div>
+      </div>
+
+      <div class="hero-cta-row">
+        <span class="hero-question">רוצה להפוך את השיר שלך למציאות?</span>
+        <a class="cta arrow-cta" href="#booking">
+          <svg viewBox="0 0 20 20"><path d="M4 10 L16 10 M10 4 L16 10 L10 16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>צרו קשר עכשיו</span>
+        </a>
+      </div>
+    </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">מה שאנחנו מציעים</div>
+    <h2>מהסקיצה הראשונה ועד המאסטר</h2>
+  </div>
+
+  <div class="services">
+    <div class="service">
+      <svg class="icon" viewBox="0 0 40 40"><polygon points="20,4 34,14 28,34 12,34 6,14" fill="none" stroke="url(#goldStroke)" stroke-width="1.2"/></svg>
+      <h3>הקלטה</h3>
+      <p>חדר בידוד אקוסטי בגודל שמאפשר תזמורת קאמרית מלאה, מיקרופונים לחתימה עם צביעה משלהם, ושרשרת אנלוגית מקצה לקצה.</p>
+    </div>
+    <div class="service">
+      <svg class="icon" viewBox="0 0 40 40"><polygon points="20,3 30,10 34,22 26,34 14,34 6,22 10,10" fill="none" stroke="url(#goldStroke)" stroke-width="1.2"/></svg>
+      <h3>מיקס</h3>
+      <p>עמדת מיקס בחדר עם תגובה אקוסטית מכוילת במדויק, כדי שההחלטה שתשמעו כאן תישאר נכונה בכל רמקול בעולם.</p>
+    </div>
+    <div class="service">
+      <svg class="icon" viewBox="0 0 40 40"><polygon points="20,5 33,20 20,35 7,20" fill="none" stroke="url(#goldStroke)" stroke-width="1.2"/></svg>
+      <h3>מאסטרינג</h3>
+      <p>גימור סופי שמכבד את הדינמיקה של העבודה, מותאם לפלטפורמת ההשמעה בלי לוותר על נשימה של ההפקה המקורית.</p>
+    </div>
+  </div>
+
+  <div class="gear-strip">
+    <div><strong>1</strong>חדר הקלטה אקוסטי</div>
+    <div><strong>24</strong>ערוצי הקלטה במקביל</div>
+    <div><strong>∞</strong>גרסאות עד שזה מדויק</div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="section-head">
+    <div class="eyebrow">בתוך האולפן</div>
+    <h2>כל פינה נבנתה סביב הצליל</h2>
+  </div>
+
+  <div class="gallery">
+    <div class="cell">
+      <svg viewBox="0 0 200 200"><polygon points="100,20 170,70 145,170 55,170 30,70" fill="none" stroke="url(#goldStroke)" stroke-width="1"/><polygon points="100,55 140,85 125,150 75,150 60,85" fill="url(#goldFillSubtle)" stroke="none"/></svg>
+      <span>חדר ההקלטה הראשי</span>
+    </div>
+    <div class="cell"><span>עמדת המיקס</span></div>
+    <div class="cell"><span>ארון המיקרופונים</span></div>
+    <div class="cell"><span>לאונג׳ אמנים</span></div>
+    <div class="cell"><span>חדר בקרה</span></div>
+  </div>
+</section>
+
+<section class="quote">
+  <p>״נכנסנו לחדר בלי לדעת מה נקבל, ויצאנו עם אלבום שנשמע בדיוק כמו שדמיינו — רק יותר טוב.״</p>
+  <div class="who">— אמן שהקליט אלבום שלם באולפן</div>
+</section>
+
+<section id="booking" class="booking">
+  <h2><span class="gold-text">בואו נשמע</span> מה אתם שומעים בראש</h2>
+  <p>סיור באולפן, ללא התחייבות, כדי להתרשם מהחדר, מהציוד ומהאנשים שילוו אתכם מהתו הראשון ועד המאסטר האחרון.</p>
+  <a class="cta" href="mailto:studio@ondola.example"><span>לתיאום סיור</span></a>
+</section>
+
+<footer>
+  <div class="brand">אולפן אונדולה</div>
+  <div>רחוב הרוקדים 12, תל אביב — נפגשים בתיאום מראש</div>
+</footer>
+
+</div><!-- /.content -->
+
+</body>
+</html>
