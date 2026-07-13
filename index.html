@@ -268,7 +268,15 @@
   .section-head{text-align:center; max-width:640px; margin:0 auto 64px;}
   .section-head .eyebrow{margin-bottom:14px;}
   .section-head h2{font-size:clamp(1.8rem, 3.4vw, 2.6rem); color:var(--white-soft);}
-  .eyebrow-work{font-size:1.3rem; letter-spacing:0.2em; color:var(--gold-bright); font-family:'Frank Ruhl Libre', serif; font-weight:600;}
+  .section-title-gold{
+    font-size:clamp(1.8rem, 3.6vw, 2.3rem);
+    letter-spacing:0.1em;
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:700;
+    display:inline-block;
+    margin-bottom:14px;
+    filter:drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+  }
 
   /* services */
   .services{
@@ -395,7 +403,7 @@
     border-top:1px solid var(--line-hair);
     border-bottom:1px solid var(--line-hair);
   }
-  .booking h2{font-size:clamp(1.9rem, 3.6vw, 2.8rem); margin-bottom:20px;}
+  .booking h2{margin-bottom:20px;}
   .booking p{opacity:0.75; max-width:480px; margin:0 auto 40px; line-height:1.8; font-size:0.98rem;}
   .contact-icons{display:flex; justify-content:center; gap:26px; flex-wrap:wrap;}
   .contact-icon-item{display:flex; flex-direction:column; align-items:center; gap:10px;}
@@ -548,7 +556,7 @@
 
 <section id="services">
   <div class="section-head">
-    <div class="eyebrow">השירותים שלנו</div>
+    <div class="gold-text section-title-gold">השירותים שלנו</div>
   </div>
 
   <div class="services">
@@ -578,7 +586,7 @@
 
 <section id="about">
   <div class="section-head">
-    <div class="eyebrow">אודות מיוזיק</div>
+    <div class="gold-text section-title-gold">אודות מיוזיק</div>
     <h2>ציוד מתקדם, תוצאה אמיתית</h2>
     <p style="margin-top:18px; font-size:0.95rem; line-height:1.9; opacity:0.85;">בשוק שמלא בפתרונות גנריים, אנחנו משקיעים בציוד ההקלטה הכי מתקדם ובעיבוד תיקון זיופים מדויק — כדי שכל שיר, כל קול וכל אחד מכם, יישמע כמו אמן אמיתי.</p>
   </div>
@@ -591,7 +599,7 @@
 
 <section id="work">
   <div class="section-head">
-    <div class="eyebrow eyebrow-work">עבודות לדוגמה</div>
+    <div class="gold-text section-title-gold">עבודות לדוגמה</div>
   </div>
 
   <div class="work-grid">
@@ -625,7 +633,7 @@
 </section>
 
 <section id="contact" class="booking">
-  <h2 class="gold-text">יצירת קשר</h2>
+  <h2 class="gold-text section-title-gold">יצירת קשר</h2>
   <p>השאירו פרטים או פנו ישירות בוואטסאפ, בטלפון או במייל, ונקבע יחד את ההקלטה או תיקון הזיופים שיביאו את השיר שלכם לגרסה הכי טובה שלו.</p>
 
   <div class="contact-icons">
