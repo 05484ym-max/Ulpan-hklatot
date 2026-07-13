@@ -302,6 +302,26 @@
   .gear-strip div{font-size:0.82rem; letter-spacing:0.06em; opacity:0.6;}
   .gear-strip strong{display:block; color:var(--gold-line); font-size:1.6rem; font-family:'Frank Ruhl Libre', serif; margin-bottom:6px; font-weight:700;}
 
+  /* work / portfolio samples */
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line-hair);
+    border:1px solid var(--line-hair);
+    max-width:760px; margin:0 auto;
+  }
+  @media (max-width:640px){ .work-grid{grid-template-columns:1fr;} }
+  .work-card{
+    background:var(--black-panel);
+    padding:48px 32px;
+    text-align:center;
+  }
+  .work-icon{width:38px; height:38px; margin:0 auto 22px; display:block;}
+  .work-card h3{font-size:1.2rem; color:var(--gold-bright); margin-bottom:8px; font-weight:500; font-family:'Frank Ruhl Libre', serif;}
+  .work-card p{font-size:0.85rem; opacity:0.65; margin-bottom:24px; font-weight:300;}
+  .work-card audio{width:100%; max-width:280px; accent-color:var(--gold-line); border-radius:20px;}
+
   /* gallery */
   .gallery{
     max-width:1080px; margin:0 auto;
@@ -347,6 +367,22 @@
   .contact-actions{display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
   .contact-actions .cta svg{width:18px; height:18px;}
   .contact-email{margin-top:26px; font-size:0.85rem; opacity:0.7;}
+
+  .scroll-hint{
+    position:absolute; bottom:26px; right:50%; transform:translateX(50%);
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    z-index:2;
+    color:var(--gold-line);
+    font-size:0.68rem; letter-spacing:0.25em;
+    opacity:0.75;
+    text-shadow:0 2px 8px rgba(0,0,0,0.9);
+    animation:scrollBounce 2.4s ease-in-out infinite;
+  }
+  .scroll-hint svg{width:16px; height:16px;}
+  @keyframes scrollBounce{
+    0%, 100%{transform:translateX(50%) translateY(0);}
+    50%{transform:translateX(50%) translateY(6px);}
+  }
 
   /* footer */
   footer{
@@ -405,8 +441,9 @@
     <span class="bar bar3"></span>
   </button>
   <nav class="nav-links" id="navLinks">
-    <a class="gold-text" href="#about">אודות</a>
     <a class="gold-text" href="#services">שירותים</a>
+    <a class="gold-text" href="#about">אודות</a>
+    <a class="gold-text" href="#work">עבודות לדוגמה</a>
     <a class="gold-text" href="#contact">יצירת קשר</a>
   </nav>
 </header>
@@ -459,6 +496,11 @@
         </a>
       </div>
     </div>
+
+    <a href="#services" class="scroll-hint" aria-label="גלילה למטה">
+      <span>גלול למטה</span>
+      <svg viewBox="0 0 20 20"><path d="M4 7 L10 13 L16 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
 </section>
 
 <section id="services">
@@ -502,6 +544,28 @@
 <section class="quote">
   <p>״כל קול ראוי להישמע בצורה הכי אמיתית שלו — וזו בדיוק המטרה שלנו.״</p>
   <div class="who">— מיוזיק, הפקות הקלטות שירה</div>
+</section>
+
+<section id="work">
+  <div class="section-head">
+    <div class="eyebrow">עבודות לדוגמה</div>
+    <h2>תשמעו בעצמכם</h2>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-card">
+      <svg class="work-icon" viewBox="0 0 40 40"><path d="M14 28V10l16-3v18" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><circle cx="11" cy="28" r="4" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><circle cx="27" cy="25" r="4" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/></svg>
+      <h3>דמעותיי</h3>
+      <p>גרסה עם פחות עיבוד — הקול הטבעי</p>
+      <audio controls preload="none" src="דימעותי.mp3">הדפדפן שלך לא תומך בנגן השמע.</audio>
+    </div>
+    <div class="work-card">
+      <svg class="work-icon" viewBox="0 0 40 40"><path d="M14 28V10l16-3v18" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><circle cx="11" cy="28" r="4" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/><circle cx="27" cy="25" r="4" fill="none" stroke="url(#goldStroke)" stroke-width="1.4"/></svg>
+      <h3>חופה — שלומי</h3>
+      <p>הקלטת שירה לחתונה</p>
+      <audio controls preload="none" src="1חופה.mp3">הדפדפן שלך לא תומך בנגן השמע.</audio>
+    </div>
+  </div>
 </section>
 
 <section id="contact" class="booking">
