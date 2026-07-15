@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מיוזיק | הפקות הקלטות שירה — נתיבות</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;600;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --black-deep:#07060a;
@@ -31,6 +31,7 @@
     font-family:'Assistant', sans-serif;
     font-weight:300;
     overflow-x:hidden;
+    filter:brightness(1.2) contrast(1.02);
     background-image:
       radial-gradient(ellipse at 20% -10%, rgba(176,136,47,0.10), transparent 45%),
       radial-gradient(ellipse at 90% 10%, rgba(176,136,47,0.06), transparent 40%);
@@ -208,10 +209,15 @@
     font-family:'Frank Ruhl Libre', serif; font-style:italic; font-weight:700;
     font-size:1.25rem; color:var(--ivory); opacity:1;
     text-shadow:0 2px 8px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.75);
-    display:inline-block; position:relative; margin-bottom:38px;
+    display:inline-block; position:relative; margin-bottom:4px;
   }
 
-  .service-row{font-size:0.92rem; color:var(--ivory); opacity:1; font-weight:600; text-shadow:0 2px 10px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7); margin-bottom:44px; line-height:1.9;}
+  .service-row{
+    font-family:'Frank Ruhl Libre', serif; font-style:italic; font-weight:700;
+    font-size:1.25rem; color:var(--ivory); opacity:1;
+    text-shadow:0 2px 8px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.75);
+    margin-bottom:44px; line-height:1.9;
+  }
 
   .live-service{
     display:inline-flex; flex-direction:column; gap:6px;
@@ -466,11 +472,17 @@
 
   /* footer */
   footer{
-    padding:50px 6vw 40px;
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
-    font-size:0.8rem; opacity:0.55;
+    padding:40px 6vw 36px;
+    text-align:center;
   }
-  footer .brand{font-family:'Frank Ruhl Libre', serif; color:var(--gold-line); opacity:1; font-size:1rem;}
+  footer .credit{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    color:var(--gold-line);
+    opacity:0.85;
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+  }
 
   :focus-visible{outline:1.5px solid var(--gold-bright); outline-offset:3px;}
 
@@ -564,9 +576,9 @@
       </svg>
 
       <h1 class="poster-title">אולפן הקלטות מקצועי בנתיבות<br>שיוציא אתכם כמו זמרים אמיתיים</h1>
-      <p class="poster-script">ציוד הקלטה מתקדם בשוק · תיקון זיופים מדויק</p>
+      <p class="poster-script">ציוד הקלטה המתקדם בשוק · תיקון זיופים מדויק</p>
 
-      <div class="service-row">ברכות בר מצווה&nbsp; * &nbsp;קאברים&nbsp; * &nbsp;תיקון זיופים&nbsp; * &nbsp;כניסות לחופות&nbsp; * &nbsp;ועוד</div>
+      <div class="service-row">ברכות בר מצווה&nbsp; . &nbsp;קאברים&nbsp; . &nbsp;כניסה לחופה&nbsp; . &nbsp;ועוד</div>
     </div>
 
     <div class="hero-cta-center">
@@ -693,8 +705,7 @@
 </section>
 
 <footer>
-  <div class="brand">מיוזיק</div>
-  <div>אריאל שרון 30, נתיבות — נפגשים בתיאום מראש</div>
+  <div class="credit">&copy; כל הזכויות שמורות ל־Yosef Omesi</div>
 </footer>
 
 </div><!-- /.content -->
