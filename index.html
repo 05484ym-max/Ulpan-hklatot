@@ -155,13 +155,27 @@
     max-width:560px;
   }
 
-  .logo-lockup{margin-bottom:26px; margin-top:-172px; transform:translateX(-18px);}
+  .logo-lockup{margin-bottom:26px; margin-top:-188px; transform:translateX(-18px); display:inline-block;}
+  .logo-prefix{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:1.05rem;
+    font-weight:600;
+    font-style:italic;
+    letter-spacing:0.14em;
+    color:var(--gold-bright);
+    text-shadow:0 2px 8px rgba(0,0,0,0.9);
+    margin-bottom:-20px;
+    display:block;
+    text-align:right;
+    transform:translateX(-28px);
+  }
   .logo-word{
     font-family:'Tangerine', cursive;
     font-weight:700;
     font-size:clamp(4.2rem, 9vw, 6.4rem);
     line-height:1.15;
-    display:inline-block;
+    display:block;
+    text-align:left;
     background:linear-gradient(115deg, var(--gold-dark) 8%, var(--gold-bright) 42%, var(--gold-line) 62%, var(--gold-dark) 88%);
     background-size:220% 100%;
     -webkit-background-clip:text;
@@ -180,7 +194,7 @@
     font-size:clamp(1.7rem, 3.4vw, 2.5rem);
     line-height:1.35;
     letter-spacing:0.01em;
-    margin-top:28px;
+    margin-top:42px;
     margin-bottom:16px;
     background:linear-gradient(115deg, var(--gold-base) 8%, var(--gold-bright) 42%, var(--gold-line) 62%, var(--gold-base) 88%);
     background-size:180% 100%;
@@ -517,6 +531,7 @@
 <section class="hero">
   <div class="hero-text">
       <div class="logo-lockup">
+        <div class="logo-prefix">אולפן</div>
         <div class="logo-word">Music</div>
         <div class="logo-tagline">הפקות · הקלטות · שירה</div>
       </div>
