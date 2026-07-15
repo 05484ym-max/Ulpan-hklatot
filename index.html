@@ -470,6 +470,31 @@
   }
 
   /* footer */
+  /* promo box */
+  .promo-wrap{padding:0 6vw 20px; text-align:center;}
+  .promo-box{
+    display:inline-flex; align-items:center; gap:5px;
+    padding:12px 26px;
+    border:1.5px solid var(--gold-base);
+    border-radius:999px;
+    background:rgba(20,17,12,0.3);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform 0.25s ease, background 0.25s ease;
+  }
+  .promo-box:hover{transform:translateY(-2px); background:rgba(20,17,12,0.5);}
+  .promo-box > span:first-child{
+    font-family:'Frank Ruhl Libre', serif; font-size:0.88rem; font-weight:600;
+    color:var(--gold-line);
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+    white-space:nowrap;
+  }
+  .promo-cta{
+    font-family:'Frank Ruhl Libre', serif; font-weight:600;
+    font-size:0.88rem; letter-spacing:0.06em; color:var(--gold-line); opacity:1;
+    white-space:nowrap;
+  }
+
   footer{
     padding:40px 6vw 36px;
     text-align:center;
@@ -612,28 +637,25 @@
     </div>
     <div class="service">
       <svg class="icon" viewBox="0 0 40 40"><polygon points="20,5 33,20 20,35 7,20" fill="none" stroke="url(#goldStroke)" stroke-width="1.6"/></svg>
-      <h3>מיקס ומאסטרינג</h3>
+      <h3>מיקס</h3>
       <p>גימור מקצועי שמעניק לשיר סאונד מלא ונקי, מוכן להשמעה בכל פלטפורמה.</p>
     </div>
-  </div>
-
-  <div class="gear-strip">
-    <div><strong>100%</strong>ציוד הקלטה מתקדם</div>
-    <div><strong>0</strong>זיופים אחרי העיבוד</div>
-    <div><strong>∞</strong>סגנונות והפקות</div>
+    <div class="service">
+      <svg class="icon" viewBox="0 0 40 40"><polygon points="20,4 34,14 28,34 12,34 6,14" fill="none" stroke="url(#goldStroke)" stroke-width="1.6"/></svg>
+      <h3>כניסה לחופה וחפלות</h3>
+      <p>עם הזמר מיכאל כורש — הופעה חיה שמלווה אתכם ברגעים הכי מרגשים.</p>
+    </div>
   </div>
 </section>
 
 <section id="about">
   <div class="section-head">
     <div class="gold-text section-title-gold">אודות מיוזיק</div>
-    <h2>ציוד מתקדם, תוצאה אמיתית</h2>
-    <p style="margin-top:18px; font-size:0.95rem; line-height:1.9; opacity:0.85;">בשוק שמלא בפתרונות גנריים, אנחנו משקיעים בציוד ההקלטה הכי מתקדם ובעיבוד תיקון זיופים מדויק — כדי שכל שיר, כל קול וכל אחד מכם, יישמע כמו אמן אמיתי.</p>
   </div>
 </section>
 
 <section class="quote">
-  <p>״כל קול ראוי להישמע בצורה הכי אמיתית שלו — וזו בדיוק המטרה שלנו.״</p>
+  <p>״כי לכל אחד יש את הניגון שלו.״</p>
   <div class="who">— מיוזיק, הפקות הקלטות שירה</div>
 </section>
 
@@ -674,7 +696,7 @@
 
 <section id="contact" class="booking">
   <h2 class="gold-text section-title-gold">יצירת קשר</h2>
-  <p>השאירו פרטים או פנו ישירות בוואטסאפ, בטלפון או במייל, ונקבע יחד את ההקלטה או תיקון הזיופים שיביאו את השיר שלכם לגרסה הכי טובה שלו.</p>
+  <p>אתם מוזמנים לפנות אלינו לוואטסאפ, טלפון, מייל וכולי, ונקבע יחד את ההקלטה או תיקון הזיופים שיביאו את השיר שלכם לגרסה הכי טובה שלו.</p>
 
   <div class="contact-icons">
     <div class="contact-icon-item">
@@ -702,6 +724,13 @@
       <span class="icon-label">וויז</span>
     </div>
   </div>
+</section>
+
+<section class="promo-wrap">
+  <a class="promo-box" href="https://wa.me/972552778348?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%20%D7%9E%D7%99%D7%95%D7%96%D7%99%D7%A7%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%92%D7%9D%20%D7%90%D7%AA%D7%A8%20%D7%9B%D7%96%D7%94" target="_blank" rel="noopener">
+    <span>רוצים גם אתר כזה</span>
+    <span class="promo-cta">לחצו כאן</span>
+  </a>
 </section>
 
 <footer>
