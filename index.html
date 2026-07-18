@@ -51,13 +51,14 @@
     --black-deep:#07060a;
     --black-panel:rgba(14,12,17,0.6);
     --black-panel-2:rgba(19,16,23,0.6);
-    --gold-dark:#5c4620;
-    --gold-base:#9c7a35;
-    --gold-line:#b3903f;
-    --gold-bright:#d6b45f;
+    --gold-dark:#6b5225;
+    --gold-base:#b8903f;
+    --gold-line:#cca34a;
+    --gold-bright:#f0c96e;
     --cream:#f2ecdc;
     --white-soft:#faf7ee;
     --ivory:#e6d8ba;
+    --page-bg:#07060a;
     --line-hair: rgba(207,166,82,0.5);
   }
 
@@ -66,7 +67,7 @@
   html{scroll-behavior:smooth;}
 
   body{
-    background:var(--black-deep);
+    background:var(--page-bg);
     color:var(--cream);
     font-family:'Assistant', sans-serif;
     font-weight:300;
@@ -249,7 +250,7 @@
   }
   .poster-script{
     font-family:'Frank Ruhl Libre', serif; font-style:italic; font-weight:700;
-    font-size:1.25rem; color:var(--ivory); opacity:1;
+    font-size:1.25rem; color:var(--white-soft); opacity:1;
     text-shadow:0 2px 8px rgba(0,0,0,0.95), 0 0 24px rgba(0,0,0,0.75);
     display:inline-block; position:relative; margin-bottom:4px;
   }
@@ -567,7 +568,7 @@
     position:fixed; inset:0; z-index:1; pointer-events:none;
     background:
       linear-gradient(to right, rgba(7,6,10,0.02) 0%, rgba(7,6,10,0.24) 42%, rgba(7,6,10,0.58) 78%),
-      linear-gradient(180deg, rgba(7,6,10,0.02) 0%, rgba(7,6,10,0.12) 34%, rgba(7,6,10,0.58) 62%, var(--black-deep) 100%);
+      linear-gradient(180deg, rgba(7,6,10,0.02) 0%, rgba(7,6,10,0.12) 34%, rgba(7,6,10,0.58) 62%, var(--page-bg) 100%);
   }
   .content{position:relative; z-index:2;}
 </style>
